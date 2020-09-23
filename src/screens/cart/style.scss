@@ -1,0 +1,65 @@
+@import "../../assets/theme.scss";
+
+$textColor: #707070;
+
+.cart {
+  margin: 15px;
+  .title {
+    text-align: center;
+    font-family: $fontFamily;
+    font-size: 40px;
+    font-weight: 300;
+    color: $textColor;
+    margin-bottom: 30px;
+  }
+  .line-item {
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
+    border-radius: 10px;
+    border: solid 1px $textColor;
+    .name, .quantity, .price {
+      font-family: $fontFamily;
+      color: $textColor;
+    }
+    .image {
+      img {
+        height: 35px;
+      }
+    }
+    .delete-line-item {
+      color: $textColor;
+    }
+  }
+  .checkout-section {
+    .net-prices {
+      border: 1px solid $textColor;
+      border-radius: 2px;
+    }
+    .checkout-action {
+      margin: 10px 0px;
+    }
+  }
+}
+
+
+@media (min-width: 768px){
+  .cart .line-item .actions {
+    text-align: right;
+  }
+
+}
+
+@media (max-width: 767px){
+  .cart {
+    .line-item {
+      text-align: center;
+      .delete-line-item {
+        border: 1px solid $textColor;
+        border-radius: 5px;
+        width: 30vh;
+      }
+    }
+  }
+}

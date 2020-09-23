@@ -1,0 +1,52 @@
+// @import "../../../../assets/theme.scss";
+
+$textColor: #ffffff;
+$greenColor: #54C7C3;
+
+#public-navbar {
+  .navbar li {
+    .btn-signup {
+      padding: 8px 20px;
+      margin-top: 6px;
+    }
+  }
+
+  .navbar-default {
+    background-color: $greenColor;
+    border: unset;
+    border-radius: unset;
+    padding: 5px 0px;
+  }
+
+  .navbar-default .navbar-nav>li>a {
+    color: $textColor;
+    font-size: 17px;
+  }
+
+  .navbar-brand {
+    margin-left: 15px;
+    padding: 0px;
+    img {
+      height: 100%;
+      width: auto;
+      background-color: white;
+    }
+  }
+}
+
+@media (max-width: 767px){
+  #public-navbar {
+    .btn-signup {
+      width: 100px;
+      margin: auto;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  #public-navbar {
+    .right-links {
+      float: right;
+    }
+  }
+}

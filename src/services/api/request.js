@@ -1,6 +1,6 @@
 import axios from 'axios';
 import authHeaders from "./authHeaders";
-import { BASE_URL } from "../../../constants";
+import { BASE_URL } from "../../constants";
 
 // We need to make it a function because sometimes this piece of code runs
 // before the localStorage is updated after authentication. So it should be a function

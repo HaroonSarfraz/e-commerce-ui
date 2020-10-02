@@ -3,14 +3,9 @@ import React from "react";
 import { fetchCategories } from "../../services/api/category";
 import { fetchProducts } from "../../services/api/product";
 // import { Products } from '../../components'
-import coverImage from "../../assets/images/about.jpg";
+import coverImage from "../../assets/images/shopping-image.jpg";
 
-import {Search} from '@material-ui/icons'
-
-import gridSelected from "../../assets/images/about.jpg";
-import gridNotSelected from "../../assets/images/about.jpg";
-import listSelected from "../../assets/images/about.jpg";
-import listNotSelected from "../../assets/images/about.jpg";
+import { Search } from '@material-ui/icons'
 
 class Shop extends React.Component {
   state = {
@@ -20,7 +15,7 @@ class Shop extends React.Component {
     products: [],
     selectedCategoryId: 'all',
     searchProductKeyword: '',
-    listView: false
+    selectedProductId: null
   }
 
   componentDidMount() {
@@ -39,7 +34,7 @@ class Shop extends React.Component {
       })
   }
 
-  _getProductsFromApi = (category_id = 'all', searchProductKeyword = '' ) => {
+  _getProductsFromApi = (category_id = 'all', searchProductKeyword = '') => {
     fetchProducts(category_id, searchProductKeyword)
       .then((response) => {
         this.setState({
@@ -50,6 +45,20 @@ class Shop extends React.Component {
   }
 
   // Handlers
+
+  closeProductModal = () => {
+    this.setState({
+      isModalOpen: false,
+      selectedProductId: null
+    })
+  }
+
+	openProductModal = (productId) => {
+    this.setState({
+      selectedProductId: productId,
+      isModalOpen: true
+    })
+  }
 
   handleCategoryChange = (e) => {
     const selectedCategoryId = e.target.value;
@@ -102,7 +111,7 @@ class Shop extends React.Component {
     }
 
 
-    return(
+    return (
       <div className="header">
         <div className="form-group row">
           <div className="col-md-3 col-sm-4 col-xs-12">
@@ -124,20 +133,6 @@ class Shop extends React.Component {
               ))}
             </select>
           </div>
-          <div className="col-md-6 col-sm-4 col-xs-12 text-center view-btns">
-            <button
-              className="btn"
-              onClick={this.unsetListView}
-            >
-              <img src={listView ? gridNotSelected : gridSelected} alt="grid"/>
-            </button>
-            <button
-              className="btn"
-              onClick={this.setListView}
-            >
-              <img src={listView ? listSelected : listNotSelected} alt="list"/>
-            </button>
-          </div>
           <div className="col-md-3 col-sm-4 col-xs-12 search-product">
             <input
               type="text"
@@ -158,8 +153,8 @@ class Shop extends React.Component {
         </div>
 
         <div className="image-container">
-          { image && <img src={image} alt="coverimage"/> }
-          { category &&
+          {image && <img src={image} alt="coverimage" />}
+          {category &&
             <div className="category-info">
               <h2>{category.name}</h2>
               <h5>{category.description}</h5>
@@ -170,13 +165,19 @@ class Shop extends React.Component {
     );
   }
 
-  render() {
-    const { products, listView } = this.state;
+  renderProducts = () => {
+    return (
+      <div className="products-container">
+        Holla
+      </div>
+    )
+  }
 
-    return(
+  render() {
+    return (
       <div className="shop">
-        { this.renderHeader()}
-        {/* { products && <Products products={products} listView={listView}/> } */}
+        {this.renderHeader()}
+        {this.renderProducts()}
       </div>
     );
   }

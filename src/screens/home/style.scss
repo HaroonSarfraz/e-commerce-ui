@@ -16,11 +16,12 @@ $textColor: white;
       }
     }
   }
-  .down-icon {
+  .shop-icon {
     position: absolute;
     bottom: 0;
     left: 50%;
     color: white;
+    cursor: pointer;
   }
 }
 
@@ -39,8 +40,8 @@ $textColor: white;
         }
       }
     }
-    .down-icon {
-      font-size: 22px;
+    .shop-icon {
+      font-size: 40px;
     }
   }
 }
@@ -59,7 +60,7 @@ $textColor: white;
         }
       }
     }
-    .down-icon {
+    .shop-icon {
       font-size: 17px;
     }
   }

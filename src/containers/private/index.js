@@ -3,7 +3,7 @@ import Navbar from "../../components/shared/private/navbar";
 import { Router, Route, Switch, Redirect } from "react-router-dom";
 import history from "../../config/history";
 
-import { Home } from '../../screens';
+import { Home, Shop, About, Contacts, Cart, UserSettings } from '../../screens';
 
 export default class Private extends React.Component {
   render() {
@@ -18,8 +18,24 @@ export default class Private extends React.Component {
               component={Home}
             />
             <Route
-              path={"/home"}
-              component={Home}
+              path={"/shop"}
+              component={Shop}
+            />
+            <Route
+              path={"/about"}
+              component={About}
+            />
+            <Route
+              path={"/contacts"}
+              component={Contacts}
+            />
+            <Route
+              path={"/user-settings"}
+              component={UserSettings}
+            />
+            <Route
+              path={"/cart"}
+              component={Cart}
             />
             <Route
               render={() => <Redirect to="/" />}

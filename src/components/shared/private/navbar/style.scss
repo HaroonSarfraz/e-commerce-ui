@@ -4,16 +4,20 @@ $textColor: #ffffff;
 
 #customer-navbar {
   .navbar-default {
-    background-color: #a5a5a5;
+    background-color: #54C7C3;
     border: unset;
     border-radius: unset;
     padding: 5px 0px;
     &.home-background {
-      background-color: #3C3E4E;
+      background-color: #54C7C3;
     }
     li {
       &.cart {
         margin: 0px;
+      }
+
+      .icon {
+        font-size: 18px;
       }
     }
   }
@@ -26,16 +30,13 @@ $textColor: #ffffff;
 
   .navbar-brand {
     margin-left: 15px;
-    padding: 0px;
-    img {
-      height: 100%;
-      width: auto;
-      background-color: white;
-    }
+    padding: 18px 0 0 0;
+    font-size: 25px;
+    color: white;
   }
   .navbar-nav {
     .custom-active {
-      border-bottom: 2px solid $highlightElements;
+      border-top: 2px solid $highlightElements;
     }
   }
 }
@@ -65,7 +66,7 @@ $textColor: #ffffff;
       }
       .custom-active-cart {
         border: 1px solid $highlightElements;
-        border-radius: 50px;
+        border-radius: 30px;
       }
     }
   }

@@ -1,4 +1,4 @@
-import { Home, Shop, Cart, UserSettings, Checkout, About, Contacts } from "../screens";
+import { Home, Shop, Cart, UserSettings, Checkout, Contacts } from "../screens";
 
 // showInMenu:    To show the Item in Sidebar
 // showInFooter:  To show the Item in Footer
@@ -63,15 +63,6 @@ const routes = [
     showInMenu: false,
     title: 'Settings',
     main: UserSettings
-  },
-  // About
-  {
-    path: "/about",
-    eventKey: "about",
-    showInFooter: true,
-    showInMenu: true,
-    title: 'About',
-    main: About
   },
   // Contacts
   {

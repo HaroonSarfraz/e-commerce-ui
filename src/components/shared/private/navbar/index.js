@@ -33,7 +33,7 @@ class Navbar extends React.Component {
               </button>
               <div className="createy-log">
                 <a className="navbar-brand" href="/">
-                  Shop
+                  Shop Online
                 </a>
               </div>
             </div>
@@ -57,16 +57,16 @@ class Navbar extends React.Component {
                 <div className="col-md-2 icons-list">
                   <ul className="nav navbar-nav icons">
                     <li className="dropdown cart">
-                      <a href="/user" data-toggle="dropdown" aria-expanded="false"><AccountCircle /></a>
+                      <a href="/user" data-toggle="dropdown" aria-expanded="false"><AccountCircle className="icon account-icon" /></a>
                         <ul className="dropdown-menu" role="menu">
-                          <li><Link to='/user/settings' className="btn btn-link">Profile</Link></li>
+                          <li><Link to='/user-settings' className="btn btn-link">Settings</Link></li>
                           <li className="divider"></li>
                           <li><a href="/signOut" className="btn btn-link" onClick={this.handleSignOut}>Sign Out</a></li>
                         </ul>
                     </li>
                     <li className={`cart ${"cart" === currentLocation ? "custom-active-cart" : ""}`}>
                       <Link to='/cart' className="btn btn-link">
-                        <ShoppingCart />
+                        <ShoppingCart className="icon cart-icon"/>
                       </Link>
                     </li>
                   </ul>
